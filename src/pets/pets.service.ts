@@ -12,6 +12,9 @@ export class PetsService {
   async findAll(): Promise<Pet[]> {
     return this.petsRepository.find();
   }
+  async findById(id: number) {
+    return this.petsRepository.findOneOrFail(id);
+  }
   async createPet(createPetInput: CreatePetInput): Promise<Pet> {
     const newPet = this.petsRepository.create(createPetInput);
     return this.petsRepository.save(newPet);
