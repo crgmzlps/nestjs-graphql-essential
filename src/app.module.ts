@@ -13,7 +13,7 @@ import { PetsModule } from './pets/pets.module';
     }),
     TypeOrmModule.forRoot({
       type: 'sqlite',
-      database: ':memory',
+      database: ':memory:',
       entities: ['dist/**/*.entity{.ts,.js}'],
       synchronize: true, // for production must be false
     }),
